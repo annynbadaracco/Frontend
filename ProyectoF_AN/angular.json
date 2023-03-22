@@ -87,9 +87,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "ProyectoF_AN/node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "ProyectoF_AN/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         }
       }
