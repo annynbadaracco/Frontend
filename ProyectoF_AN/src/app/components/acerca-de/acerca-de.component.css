@@ -15,22 +15,22 @@ div{
 @media(min-width:575px){
     #fotoperfil{
         position:absolute;
-        width:15%;
+        width:20%;
         border-radius: 100%;
-        box-shadow:3px 3px 3px;
-        left:7%;
-        top:570px;
+        box-shadow:1px 1px 1px;
+        left:13%;
+        top:530px;
 
 }
 }
-@media(man-width:575px){
+@media(max-width:575px){
         #fotoperfil{
             position:absolute;
             width:30%;
             border-radius: 100%;
             box-shadow:3px 3px 3px;
-            left:33%;
-            top:630px;
+            left:35%;
+            top:590px;
     
     }
 }
