@@ -1,0 +1,23 @@
+section{
+    background-color: rgb(166, 206, 208);
+
+}
+
+.container{
+    background-color: rgb(166, 206, 208);
+}
+
+div{
+    background-color: rgb(166, 206, 208);
+}
+.row{
+    background-color: rgb(166, 206, 208);
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: black;
+}
