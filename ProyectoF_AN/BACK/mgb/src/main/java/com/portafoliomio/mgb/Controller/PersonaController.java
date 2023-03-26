@@ -4,6 +4,7 @@ import com.portafoliomio.mgb.Entity.Persona;
 import com.portafoliomio.mgb.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,29 +16,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
-    @GetMapping("personas/traer/perfil")
+    @GetMapping("personas/traer")
     public Persona findPersona()
     {
         return ipersonaService.findPersona((long)3);
     }
     
+    @PreAuthorize("hasRol('ADMIN')")
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona) {
         ipersonaService.savePersona(persona);
         return "La persona fue creada correctamente";
     }
     
+    @PreAuthorize("hasRol('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
         return "La persona fue eliminada correctamente";
     }
     //URL: PUERTO/personas/editar/4/nombre & apellido & img
+    @PreAuthorize("hasRol('ADMIN')")
     @PutMapping("/personas/editar/{id}") //Para editar
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
